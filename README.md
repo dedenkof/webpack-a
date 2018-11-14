@@ -1,5 +1,7 @@
 # webpack-a
 webpack application
+* Install yarn with npm
+> npm i yarn -g
 * Install webpack local:
  >yarn add webpack -D
  >yarn add -D webpack-cli

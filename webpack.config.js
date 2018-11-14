@@ -16,7 +16,10 @@ module.exports = {
     /*Точка входа нашего приложения (для много страничного сайта можно сделать отдельной точкой входа для каждой страницы)
     Точками входа могут быть только те модули которые не используются другими модулями вашего приложения
     У нас н-р index.js использует другой модуль menu.js но сам index.js больше не используется никаким другим модулем*/
-    entry: PATHS.source + '/index.js',
+    entry: {
+        'index': PATHS.source + 'pages/index/index.js',
+        'blog': PATHS.source + 'pages/blog/blog.js',
+    }
     // Описывает список файлов и директорий результат работы webpack
     output: {
         path: PATHS.build,
@@ -27,7 +30,14 @@ module.exports = {
     В нашем случае это один плагин который создает html файл с заданным title*/
     plugins: [
         new HtmlWebpackPlugin({
-            template: PATHS.source + '/index.pug'
+            filename: 'index.html',
+            chunks: ['index'],
+            template: PATHS.source + 'pages/index/index.pug'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'blog.html',
+            chunks: ['blog'],
+            template: PATHS.source + 'pages/blog/blog.pug'
         })
     ],
     module: {
