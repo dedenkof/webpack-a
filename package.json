@@ -6,7 +6,7 @@
   "author": "Volodymyr Dedenko <dedenkof@ukr.net>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack",
+    "start": "webpack --watch",
     "serv" : "static build"
   },
   "devDependencies": {
