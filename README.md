@@ -7,5 +7,7 @@ webpack application
  > yarn add html-webpack-plugin -D
  * Local hosting:
  > yarn add node-static -D
+ * For job pug:
+ > yarn add pug pug-loader -D
 
 

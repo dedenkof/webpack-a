@@ -27,7 +27,18 @@ module.exports = {
     В нашем случае это один плагин который создает html файл с заданным title*/
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Webpack app'
+            template: PATHS.source + '/index.pug'
         })
-    ]
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.pug$/,
+                loader: 'pug-loader',
+                options: {
+                    pretty: true
+                }
+            }
+        ]
+    }
 };
