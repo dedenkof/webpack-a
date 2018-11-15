@@ -12,5 +12,7 @@ webpack application
  > yarn add pug pug-loader -D
  * Install webpack-dev-server (live reload + local server):
   > yarn add webpack-dev-server -D
+ * Install webpack-merge for split wepack config:
+    > yarn add webpack-merge -D
 
 

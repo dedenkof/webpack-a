@@ -3,6 +3,9 @@
 
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const merge = require('webpack-merge');
+const pug = require('./webpack/pug');
+const devserver = require('./webpack/devserver');
 
 /*PATH объект в которые мы поместим 2 свойства
 source исходники приложений и build куда будут помещаться результаты работы webpack*/
@@ -12,62 +15,46 @@ const PATHS = {
 };
 
 // общая точка входа для прода и девелоп
-const common = {
-
-    entry: {
-        'index': PATHS.source + '/pages/index/index.js',
-        'blog': PATHS.source + '/pages/blog/blog.js',
-    },
-    // Описывает список файлов и директорий результат работы webpack
-    output: {
-        path: PATHS.build,
-        // name это плейсхолдер в который автоматически будут подставляться имена точек входа entry нашего приложения
-        filename: '[name].js'
-    },
-    /*plugins идет перечисление плагинов которые кастомизируют процесс сборки webpack
-    В нашем случае это один плагин который создает html файл с заданным title*/
-    plugins: [
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            chunks: ['index'],
-            template: PATHS.source + '/pages/index/index.pug'
-        }),
-        new HtmlWebpackPlugin({
-            filename: 'blog.html',
-            chunks: ['blog'],
-            template: PATHS.source + '/pages/blog/blog.pug'
-        })
-    ],
-    module: {
-        rules: [
-            {
-                test: /\.pug$/,
-                loader: 'pug-loader',
-                options: {
-                    pretty: true
-                }
-            }
+const common = merge([
+    {
+        entry: {
+            'index': PATHS.source + '/pages/index/index.js',
+            'blog': PATHS.source + '/pages/blog/blog.js',
+        },
+        // Описывает список файлов и директорий результат работы webpack
+        output: {
+            path: PATHS.build,
+            // name это плейсхолдер в который автоматически будут подставляться имена точек входа entry нашего приложения
+            filename: '[name].js'
+        },
+        /*plugins идет перечисление плагинов которые кастомизируют процесс сборки webpack
+         В нашем случае это один плагин который создает html файл с заданным title*/
+        plugins: [
+            new HtmlWebpackPlugin({
+                filename: 'index.html',
+                chunks: ['index'],
+                template: PATHS.source + '/pages/index/index.pug'
+            }),
+            new HtmlWebpackPlugin({
+                filename: 'blog.html',
+                chunks: ['blog'],
+                template: PATHS.source + '/pages/blog/blog.pug'
+            })
         ]
     },
+    pug()
+]);
 
-};
 
-const developmentConfig = {
-    devServer: {
-        stats: 'errors-only',
-        port: 9000,
-    }
-};
 
 module.exports = function(env){
     if (env === 'production'){
         return common;
     }
     if (env === 'development'){
-        return Object.assign(
-            {},
+        return merge([
             common,
-            developmentConfig
-        )
+            devserver()
+        ])
     }
 };
