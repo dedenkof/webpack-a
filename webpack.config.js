@@ -11,11 +11,9 @@ const PATHS = {
     build:  path.join(__dirname, 'build')
 };
 
-// Експорт модуля Node.js
-module.exports = {
-    /*Точка входа нашего приложения (для много страничного сайта можно сделать отдельной точкой входа для каждой страницы)
-    Точками входа могут быть только те модули которые не используются другими модулями вашего приложения
-    У нас н-р index.js использует другой модуль menu.js но сам index.js больше не используется никаким другим модулем*/
+// общая точка входа для прода и девелоп
+const common = {
+
     entry: {
         'index': PATHS.source + '/pages/index/index.js',
         'blog': PATHS.source + '/pages/blog/blog.js',
@@ -51,7 +49,25 @@ module.exports = {
             }
         ]
     },
+
+};
+
+const developmentConfig = {
     devServer: {
-        stats: 'errors-only'
+        stats: 'errors-only',
+        port: 9000,
+    }
+};
+
+module.exports = function(env){
+    if (env === 'production'){
+        return common;
+    }
+    if (env === 'development'){
+        return Object.assign(
+            {},
+            common,
+            developmentConfig
+        )
     }
 };

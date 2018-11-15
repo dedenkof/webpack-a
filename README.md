@@ -3,8 +3,7 @@ webpack application
 * Install yarn with npm
 > npm i yarn -g
 * Install webpack local:
- >yarn add webpack -D
- >yarn add -D webpack-cli
+ >yarn add webpack -D webpack-cli -g
 * For job with html and template install plugin:
  > yarn add html-webpack-plugin -D
  * Local hosting:
