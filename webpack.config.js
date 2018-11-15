@@ -17,9 +17,9 @@ module.exports = {
     Точками входа могут быть только те модули которые не используются другими модулями вашего приложения
     У нас н-р index.js использует другой модуль menu.js но сам index.js больше не используется никаким другим модулем*/
     entry: {
-        'index': PATHS.source + 'pages/index/index.js',
-        'blog': PATHS.source + 'pages/blog/blog.js',
-    }
+        'index': PATHS.source + '/pages/index/index.js',
+        'blog': PATHS.source + '/pages/blog/blog.js',
+    },
     // Описывает список файлов и директорий результат работы webpack
     output: {
         path: PATHS.build,
@@ -32,12 +32,12 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             chunks: ['index'],
-            template: PATHS.source + 'pages/index/index.pug'
+            template: PATHS.source + '/pages/index/index.pug'
         }),
         new HtmlWebpackPlugin({
             filename: 'blog.html',
             chunks: ['blog'],
-            template: PATHS.source + 'pages/blog/blog.pug'
+            template: PATHS.source + '/pages/blog/blog.pug'
         })
     ],
     module: {
