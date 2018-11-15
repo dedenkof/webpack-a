@@ -11,5 +11,7 @@ webpack application
  > yarn add node-static -D
  * For job pug:
  > yarn add pug pug-loader -D
+ * Install webpack-dev-server (live reload + local server):
+  > yarn add webpack-dev-server -D
 
 
