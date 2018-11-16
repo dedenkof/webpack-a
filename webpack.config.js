@@ -7,6 +7,7 @@ const merge = require('webpack-merge');
 const pug = require('./webpack/pug');
 const devserver = require('./webpack/devserver');
 const sass = require('./webpack/sass');
+const css = require('./webpack/css');
 
 /*PATH объект в которые мы поместим 2 свойства
 source исходники приложений и build куда будут помещаться результаты работы webpack*/
@@ -56,7 +57,8 @@ module.exports = env => {
         return merge([
             common,
             devserver(),
-            sass()
+            sass(),
+            css()
         ])
     }
 };
