@@ -1,4 +1,6 @@
-export default function (array, className) {
+import './menu.scss';
+
+export default (array, className) => {
     var menu = document.createElement("ul");
     menu.className = className;
     var listItems = '';

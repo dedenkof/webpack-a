@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const pug = require('./webpack/pug');
 const devserver = require('./webpack/devserver');
+const sass = require('./webpack/sass');
 
 /*PATH объект в которые мы поместим 2 свойства
 source исходники приложений и build куда будут помещаться результаты работы webpack*/
@@ -47,14 +48,15 @@ const common = merge([
 
 
 
-module.exports = function(env){
+module.exports = env => {
     if (env === 'production'){
         return common;
     }
     if (env === 'development'){
         return merge([
             common,
-            devserver()
+            devserver(),
+            sass()
         ])
     }
 };
