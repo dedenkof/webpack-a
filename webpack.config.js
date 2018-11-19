@@ -49,7 +49,7 @@ const common = merge([
 
 
 
-module.exports = env => {
+module.exports = function(env) {
     if (env === 'production'){
         return common;
     }

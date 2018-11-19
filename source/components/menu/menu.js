@@ -1,6 +1,6 @@
 import './menu.scss';
 
-export default (array, className) => {
+export default function(array, className) {
     var menu = document.createElement("ul");
     menu.className = className;
     var listItems = '';
@@ -9,4 +9,4 @@ export default (array, className) => {
     });
     menu.innerHTML = listItems;
     return menu;
-};
+}
