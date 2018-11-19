@@ -18,6 +18,8 @@ webpack application
 > yarn add node-sass style-loader css-loader sass-loader -D
 * Install normalize:
 > yarn add normalize.css
-
+* Install plugin for bundle css to 1 file (if error next the way):
+> yarn add extract-text-webpack-plugin -D
+> yarn add -D extract-text-webpack-plugin@next
 
 
