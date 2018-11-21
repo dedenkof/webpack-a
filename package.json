@@ -1,7 +1,7 @@
 {
   "name": "webpack-a",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
   "repository": "https://github.com/dedenkof/webpack-a.git",
   "author": "Volodymyr Dedenko <dedenkof@ukr.net>",
   "license": "MIT",
