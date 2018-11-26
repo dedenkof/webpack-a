@@ -347,11 +347,11 @@ template {
 [hidden] {
   display: none;
 }
-h1 {
-  color: #6250cc; }
 ul {
   border: 1px solid #777; }
   ul li {
     display: inline-block;
     padding: 5px 10px;
     background: #bbb; }
+h1 {
+  color: #6250cc; }
