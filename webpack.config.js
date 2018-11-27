@@ -10,6 +10,7 @@ const devserver = require('./webpack/devserver');
 const sass = require('./webpack/sass');
 const css = require('./webpack/css');
 const extractCSS = require('./webpack/css.extract');
+const uglifyJS = require('./webpack/js.uglify');
 
 /*PATH объект в которые мы поместим 2 свойства
 source исходники приложений и build куда будут помещаться результаты работы webpack*/
@@ -85,7 +86,8 @@ module.exports = function(env) {
     if (env === 'production'){
         return merge([
             common,
-            extractCSS()
+            extractCSS(),
+            uglifyJS({ useSourceMap: true })
         ]);
     }
     if (env === 'development'){
