@@ -1,6 +1,7 @@
 # webpack-a
 webpack application
 * Install yarn with npm
+* yarn upgrade
 > npm i yarn -g
 * Install webpack local:
 >yarn add webpack -D webpack-cli -g
@@ -21,5 +22,9 @@ webpack application
 * Install plugin for bundle css to 1 file (if error next the way):
 > yarn add extract-text-webpack-plugin -D
 > yarn add -D extract-text-webpack-plugin@next
+* Normalize library:
+> yarn add normalize.css
+* jQuery library:
+> yarn add jquery
 
 
