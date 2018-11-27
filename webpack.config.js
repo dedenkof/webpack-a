@@ -70,7 +70,10 @@ const common = merge([
                 chunks: ['blog', 'common'],
                 template: PATHS.source + '/pages/blog/blog.pug'
             }),
-
+            new webpack.ProvidePlugin({
+                $: 'jquery',
+                jQuery: 'jquery'
+            })
         ]
     },
     pug()
