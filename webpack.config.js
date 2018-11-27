@@ -33,6 +33,32 @@ const common = merge([
         },
         /*plugins идет перечисление плагинов которые кастомизируют процесс сборки webpack
          В нашем случае это один плагин который создает html файл с заданным title*/
+
+        optimization: {
+            splitChunks: {
+                cacheGroups: {
+                    /*'vendor-bootstrap': {
+                     name: 'vendor-bootstrap',
+                     test: /[\\/]node_modules[\\/](jquery|bootstrap)[\\/]/,
+                     chunks: 'initial',
+                     priority: 2
+                     },
+                     'vendor-react': {
+                     name: 'vendor-react',
+                     test: /[\\/]node_modules[\\/]react.*?[\\/]/,
+                     chunks: 'initial',
+                     priority: 2
+                     },*/
+                    'common': {
+                        name: 'common',
+                        test: /[\\/]node_modules[\\/]/,
+                        chunks: 'initial',
+                        priority: 1
+                    },
+                }
+            }
+        },
+
         plugins: [
             new HtmlWebpackPlugin({
                 filename: 'index.html',
@@ -44,9 +70,7 @@ const common = merge([
                 chunks: ['blog', 'common'],
                 template: PATHS.source + '/pages/blog/blog.pug'
             }),
-            new webpack.optimize.CommonsChunkPlugin({
-                name: 'common'
-            })
+
         ]
     },
     pug()
