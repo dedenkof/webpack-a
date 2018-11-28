@@ -10,7 +10,7 @@ const devserver = require('./webpack/devserver');
 const sass = require('./webpack/sass');
 const css = require('./webpack/css');
 const extractCSS = require('./webpack/css.extract');
-const uglifyJS = require('./webpack/js.uglify');
+const uglifyJS = require('./webpack/js.uglyfy');
 
 /*PATH объект в которые мы поместим 2 свойства
 source исходники приложений и build куда будут помещаться результаты работы webpack*/
@@ -38,18 +38,6 @@ const common = merge([
         optimization: {
             splitChunks: {
                 cacheGroups: {
-                    /*'vendor-bootstrap': {
-                     name: 'vendor-bootstrap',
-                     test: /[\\/]node_modules[\\/](jquery|bootstrap)[\\/]/,
-                     chunks: 'initial',
-                     priority: 2
-                     },
-                     'vendor-react': {
-                     name: 'vendor-react',
-                     test: /[\\/]node_modules[\\/]react.*?[\\/]/,
-                     chunks: 'initial',
-                     priority: 2
-                     },*/
                     'common': {
                         name: 'common',
                         test: /[\\/]node_modules[\\/]/,
@@ -75,6 +63,7 @@ const common = merge([
                 $: 'jquery',
                 jQuery: 'jquery'
             })
+
         ]
     },
     pug()
@@ -87,7 +76,7 @@ module.exports = function(env) {
         return merge([
             common,
             extractCSS(),
-            uglifyJS({ useSourceMap: true })
+            uglifyJS()
         ]);
     }
     if (env === 'development'){

@@ -26,5 +26,7 @@ webpack application
 > yarn add normalize.css
 * jQuery library:
 > yarn add jquery
+* You may see an error like: Error: webpack.optimize.UglifyJsPlugin has been removed, please use config.optimization.minimize instead.
+> yarn add -D uglifyjs-webpack-plugin
 
 
