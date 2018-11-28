@@ -28,5 +28,6 @@ webpack application
 > yarn add jquery
 * You may see an error like: Error: webpack.optimize.UglifyJsPlugin has been removed, please use config.optimization.minimize instead.
 > yarn add -D uglifyjs-webpack-plugin
-
+* For image download
+> yarn add file-loader -D
 
