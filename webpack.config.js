@@ -12,6 +12,7 @@ const css = require('./webpack/css');
 const extractCSS = require('./webpack/css.extract');
 const uglifyJS = require('./webpack/js.uglyfy');
 const images = require('./webpack/images');
+const favicon = require('./webpack/favicon');
 
 /*PATH объект в которые мы поместим 2 свойства
 source исходники приложений и build куда будут помещаться результаты работы webpack*/
@@ -78,7 +79,8 @@ module.exports = function(env) {
         return merge([
             common,
             extractCSS(),
-            uglifyJS()
+            uglifyJS(),
+            favicon()
         ]);
     }
     if (env === 'development'){

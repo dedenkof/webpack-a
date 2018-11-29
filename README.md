@@ -30,4 +30,5 @@ webpack application
 > yarn add -D uglifyjs-webpack-plugin
 * For image download
 > yarn add file-loader -D
-
+* Add favicon
+> yarn add favicons-webpack-plugin -D
