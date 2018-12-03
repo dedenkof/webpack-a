@@ -8,10 +8,13 @@
   "scripts": {
     "start": "webpack-dev-server --env development",
     "build": "webpack --env production",
-    "serv": "static build"
+    "serv": "static build",
+    "test:lint": "eslint . --cache"
   },
   "devDependencies": {
     "css-loader": "^1.0.1",
+    "eslint": "^5.9.0",
+    "eslint-loader": "^2.1.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "favicons-webpack-plugin": "^0.0.9",
     "file-loader": "^2.0.0",
