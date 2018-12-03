@@ -32,3 +32,11 @@ webpack application
 > yarn add file-loader -D
 * Add favicon
 > yarn add favicons-webpack-plugin -D
+* Add eslint js
+> yarn add eslint -D
+* Add setting webpack eslint js
+> yarn add eslint-loader -D
+* sass stylelint
+> yarn add stylelint -D
+* sass stylelint-webpack-plugin
+> yarn add stylelint-webpack-plugin -D

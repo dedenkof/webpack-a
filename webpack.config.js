@@ -14,6 +14,7 @@ const uglifyJS = require('./webpack/js.uglyfy');
 const images = require('./webpack/images');
 const favicon = require('./webpack/favicon');
 const lintJS = require('./webpack/js.lint');
+const lintCSS = require('./webpack/sass.lint');
 
 /*PATH объект в которые мы поместим 2 свойства
 source исходники приложений и build куда будут помещаться результаты работы webpack*/
@@ -72,9 +73,8 @@ const common = merge([
   pug(),
   images(),
   lintJS({ paths: PATHS.sources }),
+  lintCSS(),
 ]);
-
-
 
 module.exports = function(env) {
   if (env === 'production'){
