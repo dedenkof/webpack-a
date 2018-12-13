@@ -40,3 +40,5 @@ webpack application
 > yarn add stylelint -D
 * sass stylelint-webpack-plugin
 > yarn add stylelint-webpack-plugin -D
+* yarn clear webpack
+> yarn add clean-webpack-plugin
