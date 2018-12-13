@@ -10,7 +10,21 @@ module.exports = function (paths) {
                     use: ExtractTextPlugin.extract({
                         publicPath: '../',
                         fallback: 'style-loader',
-                        use: ['css-loader', 'sass-loader'],
+                        use: [
+                            {
+                            loader: 'css-loader',
+                            option: {
+                                minimize: true,
+                                modules: true,
+                                importLoaders: 1
+                            }
+                            },
+                            {
+                                loader: 'sass-loader'
+
+                        }
+                        ],
+
                     }),
                 },
                 {

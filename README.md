@@ -41,4 +41,6 @@ webpack application
 * sass stylelint-webpack-plugin
 > yarn add stylelint-webpack-plugin -D
 * yarn clear webpack
-> yarn add clean-webpack-plugin
+> yarn add clean-webpack-plugin -D
+* yarn minicss
+> yarn add mini-css-extract-plugin -D
