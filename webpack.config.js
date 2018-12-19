@@ -36,7 +36,7 @@ const common = merge([
         output: {
             path: PATHS.build,
             // name это плейсхолдер в который автоматически будут подставляться имена точек входа entry нашего приложения
-            filename: 'js/[name].[contenthash].js',
+            filename: 'js/[name].[chunkhash].js',
         },
         /*plugins идет перечисление плагинов которые кастомизируют процесс сборки webpack
          В нашем случае это один плагин который создает html файл с заданным title*/
@@ -61,6 +61,8 @@ const common = merge([
                 filename: 'index.html',
                 chunks: ['index', 'common'],
                 template: PATHS.source + '/pages/index/index.pug',
+                title: 'Главная',
+                custom: 'Custom'
             }),
             new HtmlWebpackPlugin({
                 inject: false,
@@ -68,7 +70,10 @@ const common = merge([
                 filename: 'blog.html',
                 chunks: ['blog', 'common'],
                 template: PATHS.source + '/pages/blog/blog.pug',
+                title: 'Блог',
+                custom: 'Custom'
             }),
+
             new webpack.ProvidePlugin({
                 $: 'jquery',
                 jQuery: 'jquery',

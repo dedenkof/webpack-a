@@ -21,7 +21,7 @@ module.exports = function (paths) {
         },
         plugins: [
             new MiniCssExtractPlugin({
-                filename: './css/[name].[chunkhash].css', disable: false, allChunks: true
+                filename: './css/[name].[contenthash].css', disable: false, allChunks: true
             })
 
         ],
