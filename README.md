@@ -44,3 +44,5 @@ webpack application
 > yarn add clean-webpack-plugin -D
 * yarn minicss
 > yarn add mini-css-extract-plugin -D
+* yarn Babel
+> yarn add babel-core babel-loader babel-preset-env -D
