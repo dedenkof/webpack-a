@@ -9,6 +9,7 @@ const pug = require('./webpack/pug');
 const devserver = require('./webpack/devserver');
 const sass = require('./webpack/sass');
 const css = require('./webpack/css');
+const js = require('./webpack/babel');
 const extractCSS = require('./webpack/css.extract');
 const uglifyJS = require('./webpack/js.uglyfy');
 const images = require('./webpack/images');
@@ -93,6 +94,7 @@ module.exports = function (env) {
             devserver(),
             sass(),
             css(),
+            js(),
         ]);
     }
 };
