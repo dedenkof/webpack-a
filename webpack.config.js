@@ -47,7 +47,7 @@ const common = merge([
                     'common': {
                         name: 'common',
                         test: /[\\/]node_modules[\\/]/,
-                        chunks: 'initial',
+                        chunks: 'all',
                         priority: 1,
                     },
                 },
