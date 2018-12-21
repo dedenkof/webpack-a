@@ -21,8 +21,8 @@ const cleanBuild = require('./webpack/clean');
 /*PATH объект в которые мы поместим 2 свойства
  source исходники приложений и build куда будут помещаться результаты работы webpack*/
 const PATHS = {
-    source: path.join(__dirname, 'source'),
-    build: path.join(__dirname, 'build'),
+    source: path.resolve(__dirname, 'source'),
+    build: path.resolve(__dirname, 'build'),
 };
 
 // общая точка входа для прода и девелоп
