@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "jquery": "^3.3.1",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.1"
   }
 }

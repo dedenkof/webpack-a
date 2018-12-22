@@ -52,3 +52,5 @@ webpack application
 > yarn add autoprefixer -D
 * css-nano
 > yarn add cssnano -D
+* optimize-css-assets-webpack-plugin
+> yarn add optimize-css-assets-webpack-plugin
