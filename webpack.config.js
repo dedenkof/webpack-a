@@ -11,7 +11,6 @@ const sass = require('./webpack/sass');
 const css = require('./webpack/css');
 const js = require('./webpack/babel');
 const extractCSS = require('./webpack/css.extract');
-const optimizeCSS = require('./webpack/css.extract');
 const uglifyJS = require('./webpack/js.uglyfy');
 const images = require('./webpack/images');
 const favicon = require('./webpack/favicon');
@@ -63,7 +62,15 @@ const common = merge([
                 chunks: ['index', 'common'],
                 template: PATHS.source + '/pages/index/index.pug',
                 title: 'Главная',
-                custom: 'Custom'
+                custom: 'Custom',
+                minify: {
+                    removeAttributeQuotes: true,
+                    collapseWhitespace: true,
+                    html5: true,
+                    removeComments: true,
+                    removeEmptyAttributes: true,
+                    minifyCSS: true,
+                },
             }),
             new HtmlWebpackPlugin({
                 inject: false,
@@ -72,7 +79,15 @@ const common = merge([
                 chunks: ['blog', 'common'],
                 template: PATHS.source + '/pages/blog/blog.pug',
                 title: 'Блог',
-                custom: 'Custom'
+                custom: 'Custom',
+                minify: {
+                    removeAttributeQuotes: true,
+                    collapseWhitespace: true,
+                    html5: true,
+                    removeComments: true,
+                    removeEmptyAttributes: true,
+                    minifyCSS: true,
+                },
             }),
 
             new webpack.ProvidePlugin({
@@ -94,7 +109,6 @@ module.exports = function (env) {
         return merge([
             common,
             extractCSS(),
-            optimizeCSS(),
             uglifyJS(),
             favicon(),
         ]);
