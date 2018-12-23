@@ -46,3 +46,11 @@ webpack application
 > yarn add mini-css-extract-plugin -D
 * yarn Babel
 > yarn add babel-core babel-loader babel-preset-env -D
+* postcss loader
+> yarn add postcss-loader -D
+* autoprefixer
+> yarn add autoprefixer -D
+* css-nano
+> yarn add cssnano -D
+* optimize-css-assets-webpack-plugin
+> yarn add optimize-css-assets-webpack-plugin

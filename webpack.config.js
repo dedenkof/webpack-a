@@ -11,6 +11,7 @@ const sass = require('./webpack/sass');
 const css = require('./webpack/css');
 const js = require('./webpack/babel');
 const extractCSS = require('./webpack/css.extract');
+const optimizeCSS = require('./webpack/css.extract');
 const uglifyJS = require('./webpack/js.uglyfy');
 const images = require('./webpack/images');
 const favicon = require('./webpack/favicon');
@@ -21,8 +22,8 @@ const cleanBuild = require('./webpack/clean');
 /*PATH объект в которые мы поместим 2 свойства
  source исходники приложений и build куда будут помещаться результаты работы webpack*/
 const PATHS = {
-    source: path.join(__dirname, 'source'),
-    build: path.join(__dirname, 'build'),
+    source: path.resolve(__dirname, 'source'),
+    build: path.resolve(__dirname, 'build'),
 };
 
 // общая точка входа для прода и девелоп
@@ -93,6 +94,7 @@ module.exports = function (env) {
         return merge([
             common,
             extractCSS(),
+            optimizeCSS(),
             uglifyJS(),
             favicon(),
         ]);
