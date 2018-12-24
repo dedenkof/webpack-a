@@ -98,7 +98,6 @@ const common = merge([
 
         ],
     },
-    cleanBuild(),
     pug(),
     images(),
     lintJS({paths: PATHS.sources}),
@@ -108,6 +107,7 @@ const common = merge([
 module.exports = function (env) {
     if (env === 'production') {
         return merge([
+            cleanBuild(),
             common,
             extractCSS(),
             optimizeCSS(),
