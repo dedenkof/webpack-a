@@ -11,6 +11,7 @@ const sass = require('./webpack/sass');
 const css = require('./webpack/css');
 const js = require('./webpack/babel');
 const extractCSS = require('./webpack/css.extract');
+const optimizeCSS = require('./webpack/css.optimize');
 const uglifyJS = require('./webpack/js.uglyfy');
 const images = require('./webpack/images');
 const favicon = require('./webpack/favicon');
@@ -109,6 +110,7 @@ module.exports = function (env) {
         return merge([
             common,
             extractCSS(),
+            optimizeCSS(),
             uglifyJS(),
             favicon(),
         ]);
