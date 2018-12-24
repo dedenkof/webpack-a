@@ -8,7 +8,7 @@ module.exports = function(paths){
         new UglifyJsPlugin({
           test: /\.js(\?.*)?$/i,
           include: paths,
-          cache: false,
+          cache: true,
           parallel: true,
           uglifyOptions: {
             compress: false,
