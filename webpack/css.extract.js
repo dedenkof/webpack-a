@@ -24,8 +24,7 @@ module.exports = function (paths) {
                     use: [
                         MiniCssExtractPlugin.loader,
                         { loader: "css-loader", options: {minimize: true, sourceMap: true } },
-                        {
-                            loader: "postcss-loader",
+                        {loader: "postcss-loader",
                             options: {
                                 minimize: true, sourceMap: true,
                                 ident: 'postcss',
@@ -47,7 +46,7 @@ module.exports = function (paths) {
 
         plugins: [
             new MiniCssExtractPlugin({
-                filename: './css/[name].[hash].css'
+                filename: "./css/[name].[hash].css"
             })
 
         ],
